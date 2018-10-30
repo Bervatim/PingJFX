@@ -1,7 +1,6 @@
 package application;
 
 import java.io.BufferedReader;
-import java.awt.color.*;
 import java.io.File;
 import java.io.FileReader;
 
@@ -20,7 +19,7 @@ public class ArchivoListaIPs {
 		ObservableList<String> archivoListaIPs = FXCollections.observableArrayList();
 		
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(new File("/home/toni/listaIPs.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File("C:/Users/Toni/ListaIPs.txt")));
 			String line;
 			
 			while ((line = br.readLine()) != null) {

@@ -28,36 +28,24 @@ import javafx.scene.control.TextArea;
 
 public class FXMLDocumentController implements Initializable{
 		
-	@FXML
-	private Label etiquetaResultado;
 	
 	@FXML
 	private Button boton2;
 	
 	@FXML
-	private TextArea direccionIP;
-	
-	@FXML
 	private ListView<String> listaIPs;
 	
-	ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+	PingsAutomaticos pingsAutomaticos = new PingsAutomaticos();
 	
 	@FXML
-	private void onClickBoton (ActionEvent event) {  //ACTION EVENT DEL BOTON
+	private void onClickBoton (ActionEvent event) { 
 		System.out.println("has hecho click");
-
-		exec.scheduleAtFixedRate(new Runnable() {			
-			@Override
-			public void run() {
-				PingsAutomaticos pingsAutomaticos = new PingsAutomaticos();
-			}
-		}, 1, 5, TimeUnit.SECONDS);
-	}  //FIN ACTION EVENT DEL BOTON
+		pingsAutomaticos.Start();
+	} 
 	
 	@FXML
 	private void onClickParar (ActionEvent event) {
-		
-		exec.shutdown();
+		pingsAutomaticos.Stop();
 	}
 	
 	@Override
