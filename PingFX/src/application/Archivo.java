@@ -26,7 +26,8 @@ public class Archivo {
 				String part1 = parts[1];
 				String part2 = parts[2];
 				int part3 = Integer.parseInt(parts[3]);
-				archivoListaIPs.add(new Direcciones(part0,part1, part2, part3));
+				int part4 = Integer.parseInt(parts[4]);
+				archivoListaIPs.add(new Direcciones(part0,part1, part2, part3, part4));
 			}			
 			br.close();
 		} catch (Exception e) {

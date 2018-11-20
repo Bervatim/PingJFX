@@ -32,16 +32,19 @@ public class PingsAutomaticos implements Runnable{
 		this.intervalo = intervalo;
 		datos = archivo.getInitialTableData();
 		
+		
 	}
 	
 	public void Start(){
 		
 		worker = new Thread(this);
+		System.out.println("empieza a hacer pingssss");
 		worker.start();
 
 	}
 	public void Stop() {
 		running.set(false);
+		System.out.println("dejo de hacer pings");
 		
 	}
 	@Override
@@ -55,7 +58,7 @@ public class PingsAutomaticos implements Runnable{
 					Thread.currentThread().interrupt();
 					System.out.println("se paroooooo");
 				}
-				datos.forEach((a) -> Pings (a.getDireccion()));
+				datos.forEach((a) -> {if (a.getCbActivo().isSelected()) Pings (a.getDireccion());});
 			}
 	}
 		

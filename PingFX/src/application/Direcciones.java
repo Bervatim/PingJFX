@@ -3,6 +3,8 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -11,32 +13,31 @@ public class Direcciones {
 	private int indice;
 	private String nombre;
 	private String direccion;
-	private Button btnActivo;
-	private Button btnSonido;
-	private Archivo archivo;
-	private int sonido;
+	private CheckBox cbActivo;
+	private CheckBox cbSonido;
+	private int activo; //si se quiere hacer ping a esa direccion
+	private int sonido;   // si queremos que tenga sonido en caso de que no lleguemos a hacer ping
 	
-	Image soundOn = new Image(getClass().getResourceAsStream("/soundOn.jpg"));
-	Image soundOff = new Image(getClass().getResourceAsStream("/soundOff.jpg"));
-	private AccionesBotones accionesBotones = new AccionesBotones();
-	
-	
-	public Direcciones(int indice, String nombre, String direccion, int sonido){
+	public Direcciones(int indice, String nombre, String direccion, int activo, int sonido){
 		this.indice = indice;
 		this.nombre = nombre;
 		this.direccion = direccion;
+		this.activo = activo;
 		this.sonido = sonido;
-		btnActivo = new Button("");
-		btnSonido = new Button("", new ImageView(soundOn));
-		btnSonido.setOnAction(new EventHandler<ActionEvent>() {
-			
-			@Override
-			public void handle(ActionEvent event) {
-				accionesBotones.CambioImagen(indice);
-				
-			}
-		});
+		cbActivo = new CheckBox();
+		cbSonido = new CheckBox();
 		
+		if (activo == 1) {
+				cbActivo.setSelected(true);
+			} else {
+				cbActivo.setSelected(false);
+			}
+			if (sonido == 1) {
+				cbSonido.setSelected(true);
+			} else {
+				cbSonido.setSelected(false);
+			}
+	
 	}
 	public int getIndice() {
 		return indice;
@@ -65,23 +66,29 @@ public class Direcciones {
 	}
 
 
-	public Button getBtnActivo() {
-		return btnActivo;
+	public  CheckBox getCbActivo() {
+		return cbActivo;
 	}
 
 
-	public void setBtnActivo(Button btnActivo) {
-		this.btnActivo = btnActivo;
+	public void setcbActivo(CheckBox cbActivo) {
+		this.cbActivo = cbActivo;
 	}
 
-
-	public Button getBtnSonido() {
-		return btnSonido;
+	
+	public int getActivo(){
+		return activo;
 	}
-
-
-	public void setBtnSonido(Button btnSonido) {
-		this.btnSonido = btnSonido;
+	
+	public int getSonido() {
+		return sonido;
+	}
+	
+	public CheckBox getCbSonido() {
+		return cbSonido;
+	}
+	public void setCbSonido(CheckBox cbSonido) {
+		this.cbSonido = cbSonido;
 	}
 
 

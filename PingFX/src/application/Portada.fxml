@@ -14,11 +14,11 @@
               <columns>
                 <TableColumn id="colNombre" fx:id="colNombre" prefWidth="75.0" text="Nombre" />
                 <TableColumn id="colDireccion" fx:id="colDireccion" prefWidth="75.0" text="Dirección IP" />
-                <TableColumn id="colActivo" fx:id="colActivo" prefWidth="60.00" text=""/>
-                <TableColumn id="colSonido" fx:id="colSonido" prefWidth="60.00" text=""/>
+                <TableColumn id="colActivo" fx:id="colActivo" prefWidth="60.00" text="Activo" />
+                <TableColumn id="colSonido" fx:id="colSonido" prefWidth="60.00" text="Sonido"/>
               </columns>
             </TableView>
-            <Button id="botonPing" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickBoton" text="Start" />
+            <Button id="botonPing" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickBoton" text="Start"/>
             <Button id="boton2" fx:id="boton2" layoutX="68.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickParar" text="Stop" />            
          </children>
       </AnchorPane>

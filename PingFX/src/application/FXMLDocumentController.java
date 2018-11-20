@@ -75,10 +75,13 @@ public class FXMLDocumentController implements Initializable{
 				
 		colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
 		colDireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-		colActivo.setCellValueFactory(new PropertyValueFactory<>("btnActivo"));
-		colSonido.setCellValueFactory(new PropertyValueFactory<>("btnSonido"));
+		colActivo.setCellValueFactory(new PropertyValueFactory<>("cbActivo"));
+		colSonido.setCellValueFactory(new PropertyValueFactory<>("cbSonido"));
 
 		tablaIPs.setItems(archivo.getInitialTableData());
+		
+		colActivo.setStyle("-fx-alignment: CENTER");
+		colSonido.setStyle("-fx-alignment: CENTER");
 		/*
 		tablaIPs.setEditable(true);
 		//Hacemos editable las lineas de la columna Nombre
