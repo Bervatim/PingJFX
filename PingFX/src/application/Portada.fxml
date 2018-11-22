@@ -10,16 +10,20 @@
    <center>
       <AnchorPane prefHeight="0.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView id="tablaIPs" fx:id="tablaIPs" layoutX="14.0" layoutY="87.0" prefHeight="152.0" prefWidth="330.0">
+            <TableView id="tablaIPs" fx:id="tablaIPs" layoutX="14.0" layoutY="87.0" prefHeight="152.0" prefWidth="350.0">
               <columns>
                 <TableColumn id="colNombre" fx:id="colNombre" prefWidth="75.0" text="Nombre" />
                 <TableColumn id="colDireccion" fx:id="colDireccion" prefWidth="75.0" text="Dirección IP" />
                 <TableColumn id="colActivo" fx:id="colActivo" prefWidth="60.00" text="Activo" />
                 <TableColumn id="colSonido" fx:id="colSonido" prefWidth="60.00" text="Sonido"/>
+                <TableColumn id="colResultado" fx:id="colResultado" prefWidth="60.00" text="Resultado"/>
               </columns>
             </TableView>
             <Button id="botonPing" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickBoton" text="Start"/>
-            <Button id="boton2" fx:id="boton2" layoutX="68.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickParar" text="Stop" />            
+            <Button id="boton2" fx:id="boton2" layoutX="68.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickParar" text="Stop" />
+            <Button id="btnDesactivados" fx:id="btnDesactivados" layoutX="120.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickParar" text="Desactivados" />
+            <Button id="btnSinSonido" fx:id="btnSinSonido" layoutX="220.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickParar" text="Sin Sonido" />
+            <Button id="btnFallos" fx:id="btnFallos" layoutX="300.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickParar" text="Fallos" />            
          </children>
       </AnchorPane>
    </center>

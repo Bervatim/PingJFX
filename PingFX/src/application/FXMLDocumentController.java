@@ -82,28 +82,23 @@ public class FXMLDocumentController implements Initializable{
 		
 		colActivo.setStyle("-fx-alignment: CENTER");
 		colSonido.setStyle("-fx-alignment: CENTER");
-		/*
+		
 		tablaIPs.setEditable(true);
-		//Hacemos editable las lineas de la columna Nombre
+		//Hacemos que las celdas de cada una de las columnas sean editables
 		colNombre.setCellFactory(TextFieldTableCell.forTableColumn());
-		colNombre.setOnEditCommit(new EventHandler<CellEditEvent>() {
-			
-			@Override
-			public void handle(CellEditEvent t){
-				((Direcciones) t.getTableView().getItems().get(t.getTablePosition().getRow())).setNombre((String) t.getNewValue());
-				saveTableData();
-			}
+		colDireccion.setCellFactory(TextFieldTableCell.forTableColumn());
+		
+		//Y el listener cuando editamos una celda de la columna colNombre.
+		colNombre.setOnEditCommit(data -> {
+			System.out.println("Nuevo nombre: " + data.getNewValue());
+			System.out.println("Antiguo nombre: " + data.getOldValue());
 		});
 		
-		//Hacemos editable las líneas de la columna Direccion
-		colDireccion.setCellFactory(TextFieldTableCell.forTableColumn());
-		colDireccion.setOnEditCommit(new EventHandler<CellEditEvent>() {
-			
-			@Override
-			public void handle(CellEditEvent t){
-				((Direcciones) t.getTableView().getItems().get(t.getTablePosition().getRow())).setDireccion((String) t.getNewValue());
-			}
-		});*/
+		//Y el listener cuando editamos una celda de la columna colDireccion.
+		colDireccion.setOnEditCommit(data -> {
+			System.out.println("Nuevo nombre: " + data.getNewValue());
+			System.out.println("Antiguo nombre: " + data.getOldValue());
+		});
 		
 		} // FIN METODO INITIALIZE
 	
