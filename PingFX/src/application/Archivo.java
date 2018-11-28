@@ -16,7 +16,7 @@ public class Archivo {
 		ObservableList<Direcciones> archivoListaIPs = FXCollections.observableArrayList();
 
 		try {  //Accedemos al archivo con los datos de las direcciones
-			BufferedReader br = new BufferedReader(new FileReader(new File("C:/Users/Toni/ListaIPs.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File(getClass().getResource("/ListaIPs.txt").toURI())));
 			String line;
 			
 			while ((line = br.readLine()) != null) {
